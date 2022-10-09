@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Matiere
+{% endblock %}
+
+{% block body %}
+	<h1>Matiere</h1>
+
+	<table class="table">
+		<tbody>
+
+			<tr>
+				<th>Code_mat</th>
+				<td>{{ matiere.id }}</td>
+			</tr>
+			<tr>
+				<th>Libelle_mat</th>
+				<td>{{ matiere.libelleMat }}</td>
+			</tr>
+			<tr>
+				<th>Coefficient</th>
+				<td>{{ matiere.coefficient }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="{{ path('matiere_index') }}">back to list</a>
+
+	<a href="{{ path('matiere_edit', {'id': matiere.code_mat}) }}">edit</a>
+
+	{{ include('matiere/_delete_form.html.twig') }}
+{% endblock %}
